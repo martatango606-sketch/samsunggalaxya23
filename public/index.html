@@ -11,122 +11,150 @@
 </head>
 <body>
   
-  <!-- Top Bar -->
+  <!-- Top Bar (Plum Background - Screenshot 2) -->
   <div class="top-bar">
     <div class="top-bar__inner">
-      <div class="top-bar__phones">
-        <span>Киев: <strong>(044) 364-55-45</strong></span>
-        <span>Бесплатно по Украине: <strong>0 800 200 745</strong></span>
-        <span>Lifecell: <strong>(093) 309-91-88</strong></span>
-        <span>Kyivstar: <strong>(067) 232-73-15</strong></span>
-        <button class="top-bar__callback-btn" onclick="App.openCallback()">Перезвоните мне</button>
+      <div class="top-bar__links">
+        <a href="#">Доставка и оплата</a>
+        <a href="#">Примерка и обмен</a>
+        <a href="#">Контакты</a>
+        <a href="#">Электронные карты для шопинга</a>
       </div>
-      <div class="top-bar__meta">
-        <span>Шоурум: г. Киев, ул. Князей Острожских, 46/2</span>
-        <div class="lang-switch">
-          <a href="/" class="active">RU</a> | <a href="/">UA</a>
-        </div>
+      <div class="top-bar__right">
+        <span onclick="App.openCallback()">0 800 200-745 ⌄</span>
+        <span>RU ⌄</span>
+        <span onclick="App.showToast('Вход в личный кабинет')">Вход в аккаунт</span>
       </div>
     </div>
   </div>
 
-  <!-- Main Header -->
+  <!-- Main Header Line -->
   <header class="site-header">
     <div class="header-main">
-      <a href="/" class="header-logo">
-        <img src="https://im1.intimo.com.ua/assets/i/intimo-logo.svg" alt="INTIMO.com.ua" onerror="this.src='https://im5.intimo.com.ua/assets/i/intimo-logo.png'">
-      </a>
-
-      <a href="/catalog" class="catalog-btn">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        Каталог
-      </a>
-
-      <div class="search-box">
-        <input type="text" id="headerSearch" class="search-box__input" placeholder="Поиск среди более 10 000 моделей белья...">
-        <div class="search-box__icon">
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-        </div>
-        <div id="searchDropdown" class="search-results-dropdown"></div>
+      <!-- Gender Tabs -->
+      <div class="header-gender-tabs">
+        <a href="/catalog?cat=zhenskoe-bele" class="gender-tab active">ЖЕНЩИНАМ</a>
+        <a href="/catalog?cat=muzhskoe" class="gender-tab">МУЖЧИНАМ</a>
+        <a href="/catalog?cat=detskoe" class="gender-tab">ДЕТКАМ</a>
+        <a href="/catalog?cat=lux" class="gender-tab">ЛЮКС</a>
       </div>
 
-      <div class="header-actions">
-        <a href="/catalog" class="header-action-item">
+      <!-- Center Script Logo -->
+      <a href="/" class="header-logo">
+        <img src="https://im1.intimo.com.ua/assets/i/intimo-logo.svg" alt="INTIMO" onerror="this.src='https://im5.intimo.com.ua/assets/i/intimo-logo.png'">
+      </a>
+
+      <!-- Right Group (Search + Wishlist + Cart) -->
+      <div class="header-right-group">
+        <div class="search-box">
+          <div class="search-box__ai-icon">ai</div>
+          <input type="text" id="headerSearch" class="search-box__input" placeholder="Пишите, что желаете...">
+          <div class="search-box__extra-icons">
+            <!-- Camera / Photo Search -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" title="Поиск по фото">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+            <!-- Microphone / Voice Search -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" title="Голосовой поиск">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              <line x1="12" y1="19" x2="12" y2="23"/>
+              <line x1="8" y1="23" x2="16" y2="23"/>
+            </svg>
+          </div>
+          <div id="searchDropdown" class="search-results-dropdown"></div>
+        </div>
+
+        <!-- Wishlist -->
+        <a href="/catalog" class="header-icon-btn" title="Избранное">
           <svg viewBox="0 0 24 24">
             <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
           </svg>
-          <span>Избранное</span>
           <div id="favBadge" class="badge-count" style="display:none;">0</div>
         </a>
 
-        <div class="header-action-item" onclick="App.openCart()">
+        <!-- Cart -->
+        <button class="header-icon-btn" onclick="App.openCart()" title="Корзина">
           <svg viewBox="0 0 24 24">
             <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
             <line x1="3" y1="6" x2="21" y2="6"/>
             <path d="M16 10a4 4 0 01-8 0"/>
           </svg>
-          <span>Корзина</span>
           <div id="cartBadge" class="badge-count" style="display:none;">0</div>
-        </div>
+        </button>
       </div>
     </div>
 
-    <!-- Navigation Bar -->
-    <nav class="nav-bar">
-      <div class="nav-bar__inner">
-        <a href="/catalog?cat=zhenskoe-bele" class="nav-link ">Женщинам</a>
-        <a href="/catalog?cat=byustgaltery" class="nav-link">Бюстгальтеры</a>
-        <a href="/catalog?cat=trusiki" class="nav-link">Трусики</a>
-        <a href="/catalog?cat=kupalniki" class="nav-link">Купальники</a>
-        <a href="/catalog?cat=bodi" class="nav-link">Боди</a>
-        <a href="/catalog?cat=domashnyaya-odezhda" class="nav-link">Домашняя одежда</a>
-        <a href="/catalog?cat=muzhskoe" class="nav-link">Мужчинам</a>
-        <a href="/catalog?sale=1" class="nav-link sale">SALE до -60%</a>
-        <a href="/catalog" class="nav-link">Бренды</a>
+    <!-- Sub-navigation Category Links (Screenshot 2) -->
+    <nav class="subnav-bar">
+      <div class="subnav-bar__inner">
+        <a href="/catalog?cat=zhenskoe-bele" class="subnav-link ">Женское белье</a>
+        <a href="/catalog?cat=byustgaltery" class="subnav-link ">Бюстгальтеры</a>
+        <a href="/catalog?cat=trusiki" class="subnav-link ">Трусики</a>
+        <a href="/catalog?cat=eroticheskoe" class="subnav-link ">Эротическое белье</a>
+        <a href="/catalog?cat=domashnyaya-odezhda" class="subnav-link ">Домашняя одежда</a>
+        <a href="/catalog?cat=termobele" class="subnav-link ">Термобельё</a>
+        <a href="/catalog?cat=odezhda" class="subnav-link ">Одежда</a>
+        <a href="/catalog?cat=kolgotki" class="subnav-link ">Колготки</a>
+        <a href="/catalog?cat=aksessuary" class="subnav-link ">Аксессуары</a>
+        <a href="/catalog?cat=obuv" class="subnav-link ">Обувь</a>
+        <a href="/catalog?cat=kupalniki" class="subnav-link ">Купальники</a>
+        <a href="/catalog?sale=1" class="subnav-link sale ">SALE</a>
       </div>
     </nav>
   </header>
-
-  <!-- Promo alert strip -->
-  <div class="promo-top-strip">
-    <span>🔥 Весенняя распродажа белья и купальников со скидками до -60%! Бесплатная доставка от 1500 ₴</span>
-    <a href="/catalog?sale=1">Смотреть скидки →</a>
-  </div>
   
 
-  <!-- Hero Slider / Promo Grid -->
-  <section class="hero-section">
-    <div class="hero-grid">
-      <div class="hero-banner-main" style="background-image: url('https://im1.intimo.com.ua/img/nb/1788249527_img_1_1_25_772_600x500.jpg');">
-        <div class="hero-banner-main__content">
-          <h1 class="hero-banner-main__title">Коллекция белья 2026</h1>
-          <p class="hero-banner-main__subtitle">Европейское качество, идеальная посадка и нежнейшие материалы</p>
-          <a href="/catalog?cat=zhenskoe-bele" class="btn-white">Перейти в каталог →</a>
-        </div>
+  <!-- FULL-WIDTH HERO SLIDER (Edge-to-Edge 100% Screen Width - Screenshot 2) -->
+  <div class="hero-fullwidth-slider" id="heroSlider">
+    <div class="hero-slider-track" id="sliderTrack">
+      <!-- Slide 1 (Exact image from Screenshot 2: BACK TO OFFICE) -->
+      <div class="hero-slide">
+        <a href="/catalog?cat=zhenskoe-bele">
+          <img class="hero-slide__image" src="https://im1.intimo.com.ua/img/nb/1788170306_img_1_2_7_771_2732x856.jpg" alt="BACK TO OFFICE - Білизна та одяг для нового сезону">
+        </a>
       </div>
-      <div class="hero-banner-side">
-        <div class="side-banner-item" style="background-image: url('https://im1.intimo.com.ua/img/nb/1786449972_img_1_1_23_768_498x747.jpg');">
-          <div class="side-banner-item__content">
-            <div class="side-banner-item__title">Купальники 2026</div>
-            <a href="/catalog?cat=kupalniki" class="btn-white">Выбрать купальник →</a>
-          </div>
-        </div>
-        <div class="side-banner-item" style="background-image: url('https://im1.intimo.com.ua/img/nb/1784284448_img_1_1_23_767_498x747_4.jpg');">
-          <div class="side-banner-item__content">
-            <div class="side-banner-item__title">Скидки до -60%</div>
-            <a href="/catalog?sale=1" class="btn-white">В раздел SALE →</a>
-          </div>
-        </div>
+
+      <!-- Slide 2 (SALE) -->
+      <div class="hero-slide">
+        <a href="/catalog?sale=1">
+          <img class="hero-slide__image" src="https://im1.intimo.com.ua/img/nb/1786449767_img_1_2_7_768_2732x856.jpg" alt="Распродажа до -60%">
+        </a>
+      </div>
+
+      <!-- Slide 3 (Коллекция белья) -->
+      <div class="hero-slide">
+        <a href="/catalog?cat=byustgaltery">
+          <img class="hero-slide__image" src="https://im1.intimo.com.ua/img/nb/1788248276_img_1_2_7_772_2732x856.jpg" alt="Новая коллекция нижнего белья">
+        </a>
+      </div>
+
+      <!-- Slide 4 (Купальники и пляжная одежда) -->
+      <div class="hero-slide">
+        <a href="/catalog?cat=kupalniki">
+          <img class="hero-slide__image" src="https://im1.intimo.com.ua/img/nb/1785938884_img_1_2_7_755_2732x856_5.jpg" alt="Купальники и пляжная одежда">
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- Categories -->
+    <!-- Badge -10% in bottom-left (Screenshot 2) -->
+    <a href="/catalog?sale=1" class="hero-slider__badge" title="Скидка -10%">-10%</a>
+
+    <!-- Slider Dots in bottom-right (Screenshot 2) -->
+    <div class="hero-slider__dots" id="sliderDots">
+      <button class="hero-dot active" onclick="goToSlide(0)"></button>
+      <button class="hero-dot" onclick="goToSlide(1)"></button>
+      <button class="hero-dot" onclick="goToSlide(2)"></button>
+      <button class="hero-dot" onclick="goToSlide(3)"></button>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="hero-arrow hero-arrow_prev" onclick="prevSlide()">❮</button>
+    <button class="hero-arrow hero-arrow_next" onclick="nextSlide()">❯</button>
+  </div>
+
+  <!-- Popular Categories Grid -->
   <section class="categories-slider">
     <div class="categories-slider__title">Популярные категории</div>
     <div class="categories-grid">
@@ -161,7 +189,7 @@
     </div>
   </section>
 
-  <!-- Popular Products Section -->
+  <!-- Product Showcase Section -->
   <section class="products-section">
     <div class="section-header">
       <div class="section-tabs">
@@ -903,7 +931,7 @@
         </div>
         <div>
           <div class="benefit-item__title">Бесплатная доставка</div>
-          <div class="benefit-item__desc">По Киеву и Украине от 1500 ₴</div>
+          <div class="benefit-item__desc">По Киеву и всей Украине от 1500 ₴</div>
         </div>
       </div>
 
@@ -988,7 +1016,7 @@
         <div>
           <div class="footer__title">Контакты и подписка</div>
           <div class="footer__contacts">
-            <p>Бесплатно по Украине: <strong>0 800 200 745</strong></p>
+            <p>Бесплатно по Украине: <strong>0 800 200-745</strong></p>
             <p>Viber / Telegram: <strong>(093) 309-91-88</strong></p>
             <p>Email: <strong>info@intimo.com.ua</strong></p>
           </div>
@@ -1003,7 +1031,7 @@
       </div>
 
       <div class="footer__bottom">
-        <div>© 2002–2026 INTIMO. Все права защищены. Клон для Railway.</div>
+        <div>© 2002–2026 INTIMO. Все права защищены.</div>
         <div>
           <span style="margin-right: 15px;">Visa / Mastercard / Apple Pay / Google Pay</span>
         </div>
@@ -1033,7 +1061,7 @@
     <div class="modal-dialog">
       <button class="modal-close" onclick="App.closeQuickBuy()">✕</button>
       <h3 id="quickBuyTitle" class="modal-title">Быстрый заказ</h3>
-      <p class="modal-desc">Оставьте ваш номер телефона, и наш консультант согласует доставку и размер.</p>
+      <p class="modal-desc">Оставьте номер телефона, и наш консультант согласует размер и доставку.</p>
       <div style="margin-bottom: 16px; font-size: 15px; color: #be2c4b; font-weight: 700;" id="quickBuyPrice"></div>
       <form onsubmit="handleQuickBuySubmit(event)">
         <div class="form-group">
@@ -1045,7 +1073,7 @@
           <input type="tel" id="quickBuyPhone" required placeholder="+38 (0__) ___-__-__" class="form-input">
         </div>
         <div class="form-group">
-          <label>Город / Адрес доставки</label>
+          <label>Город / Отделение доставки</label>
           <input type="text" id="quickBuyAddress" placeholder="г. Киев, Новая Почта №12" class="form-input">
         </div>
         <button type="submit" class="btn-submit">Подтвердить заказ</button>
@@ -1107,6 +1135,39 @@
   
 
   <script>
+    // Hero Slider Functionality
+    let currentSlide = 0;
+    const totalSlides = 4;
+    let sliderTimer = null;
+
+    function goToSlide(index) {
+      currentSlide = (index + totalSlides) % totalSlides;
+      const track = document.getElementById('sliderTrack');
+      if (track) {
+        track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+      }
+      document.querySelectorAll('.hero-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+      });
+      resetSliderTimer();
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    function resetSliderTimer() {
+      clearInterval(sliderTimer);
+      sliderTimer = setInterval(nextSlide, 5000);
+    }
+
+    resetSliderTimer();
+
+    // Tabs Functionality
     function showTab(name, btn) {
       document.querySelectorAll('.section-tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
