@@ -3,6 +3,7 @@ const path = require('path');
 
 const products = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'products.json'), 'utf8'));
 const categories = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'categories.json'), 'utf8'));
+const customCss = fs.readFileSync(path.join(__dirname, '..', 'public', 'assets', 'css', 'custom.css'), 'utf8');
 
 function renderHeader(activeCategory = '') {
   return `
@@ -36,7 +37,7 @@ function renderHeader(activeCategory = '') {
 
       <!-- Center Script Logo -->
       <a href="/" class="header-logo">
-        <img src="https://im1.intimo.com.ua/assets/i/intimo-logo.svg" alt="INTIMO" onerror="this.src='https://im5.intimo.com.ua/assets/i/intimo-logo.png'">
+        <img src="https://im1.intimo.com.ua/assets/i/intimo-logo.svg" alt="INTIMO" onerror="this.src='https://im5.intimo.com.ua/assets/i/intimo-logo.png'" style="height:40px; display:block;">
       </a>
 
       <!-- Right Group (Search + Wishlist + Cart) -->
@@ -46,12 +47,12 @@ function renderHeader(activeCategory = '') {
           <input type="text" id="headerSearch" class="search-box__input" placeholder="Пишите, что желаете...">
           <div class="search-box__extra-icons">
             <!-- Camera / Photo Search -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" title="Поиск по фото">
+            <svg width="18" height="18" style="width:18px;height:18px;min-width:18px;max-width:18px;display:inline-block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" title="Поиск по фото">
               <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
               <circle cx="12" cy="13" r="4"/>
             </svg>
             <!-- Microphone / Voice Search -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" title="Голосовой поиск">
+            <svg width="18" height="18" style="width:18px;height:18px;min-width:18px;max-width:18px;display:inline-block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" title="Голосовой поиск">
               <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
               <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
               <line x1="12" y1="19" x2="12" y2="23"/>
@@ -62,8 +63,8 @@ function renderHeader(activeCategory = '') {
         </div>
 
         <!-- Wishlist -->
-        <a href="/catalog" class="header-icon-btn" title="Избранное">
-          <svg viewBox="0 0 24 24">
+        <a href="/catalog" class="header-icon-btn" title="Избранное" style="text-decoration:none;">
+          <svg width="24" height="24" style="width:24px;height:24px;min-width:24px;max-width:24px;display:inline-block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
           </svg>
           <div id="favBadge" class="badge-count" style="display:none;">0</div>
@@ -71,7 +72,7 @@ function renderHeader(activeCategory = '') {
 
         <!-- Cart -->
         <button class="header-icon-btn" onclick="App.openCart()" title="Корзина">
-          <svg viewBox="0 0 24 24">
+          <svg width="24" height="24" style="width:24px;height:24px;min-width:24px;max-width:24px;display:inline-block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
             <line x1="3" y1="6" x2="21" y2="6"/>
             <path d="M16 10a4 4 0 01-8 0"/>
@@ -288,7 +289,7 @@ function renderFooter() {
     </div>
   </div>
 
-  <script src="/assets/js/main.js"></script>
+  <script src="./assets/js/main.js"></script>
   <script>
     async function handleQuickBuySubmit(e) {
       e.preventDefault();
@@ -336,7 +337,7 @@ function renderProductCard(p) {
     <div class="product-card__image-wrap">
       ${p.discount ? `<div class="product-card__badge">${p.discount}</div>` : ''}
       <button class="product-card__favorite" data-id="${p.id}" onclick="App.toggleFavorite('${p.id}', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/${p.id}/">
         <img class="product-card__image" src="${p.image}" alt="${p.title}" loading="lazy">
@@ -363,7 +364,7 @@ function renderProductCard(p) {
   `;
 }
 
-// Generate Index Page with Full-Width Banner Slider (Screenshot 2)
+// Generate Index Page with Embedded Critical CSS & Full-Width Banner Slider
 function buildIndexPage() {
   const popular = products.slice(0, 8);
   const newArrivals = products.slice(8, 16);
@@ -375,10 +376,13 @@ function buildIndexPage() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Женское белье 2026: купить нижнее белье Киев, Украина в INTIMO</title>
-  <link rel="stylesheet" href="/assets/css/intimo.css">
-  <link rel="stylesheet" href="/assets/css/custom.css">
   <link rel="icon" sizes="192x192" href="https://im1.intimo.com.ua/assets/i/app-icon-192x192.png">
   <link rel="shortcut icon" href="https://im1.intimo.com.ua/assets/i/favicon.png?v=4">
+  <link rel="stylesheet" href="./assets/css/intimo.css">
+  <link rel="stylesheet" href="./assets/css/custom.css">
+  <style id="critical-inline-styles">
+    ${customCss}
+  </style>
 </head>
 <body>
   ${renderHeader('home')}
@@ -545,7 +549,7 @@ function buildIndexPage() {
 </html>`;
 
   fs.writeFileSync(path.join(__dirname, '..', 'public', 'index.html'), html, 'utf8');
-  console.log('Built public/index.html with full-width hero slider!');
+  console.log('Built public/index.html with embedded critical styles!');
 }
 
 // Generate Catalog Page
@@ -556,11 +560,12 @@ function buildCatalogPage() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Каталог нижнего белья и купальников | INTIMO</title>
-  <link rel="stylesheet" href="/assets/css/intimo.css">
-  <link rel="stylesheet" href="/assets/css/custom.css">
   <link rel="icon" sizes="192x192" href="https://im1.intimo.com.ua/assets/i/app-icon-192x192.png">
   <link rel="shortcut icon" href="https://im1.intimo.com.ua/assets/i/favicon.png?v=4">
-  <style>
+  <link rel="stylesheet" href="./assets/css/intimo.css">
+  <link rel="stylesheet" href="./assets/css/custom.css">
+  <style id="critical-inline-styles">
+    ${customCss}
     .catalog-layout {
       max-width: 1360px;
       margin: 25px auto;
@@ -749,7 +754,7 @@ function buildCatalogPage() {
             <div class="product-card__image-wrap">
               \${p.discount ? \`<div class="product-card__badge">\${p.discount}</div>\` : ''}
               <button class="product-card__favorite" data-id="\${p.id}" onclick="App.toggleFavorite('\${p.id}', this)" title="В избранное">
-                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
               </button>
               <a href="/goods/\${p.id}/">
                 <img class="product-card__image" src="\${p.image}" alt="\${p.title}" loading="lazy">
@@ -787,7 +792,7 @@ function buildCatalogPage() {
 </html>`;
 
   fs.writeFileSync(path.join(__dirname, '..', 'public', 'catalog.html'), html, 'utf8');
-  console.log('Built public/catalog.html');
+  console.log('Built public/catalog.html with embedded critical styles!');
 }
 
 // Generate Product Page
@@ -800,11 +805,12 @@ function buildProductPage() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="pageTitle">Купить нижнее белье в INTIMO</title>
-  <link rel="stylesheet" href="/assets/css/intimo.css">
-  <link rel="stylesheet" href="/assets/css/custom.css">
   <link rel="icon" sizes="192x192" href="https://im1.intimo.com.ua/assets/i/app-icon-192x192.png">
   <link rel="shortcut icon" href="https://im1.intimo.com.ua/assets/i/favicon.png?v=4">
-  <style>
+  <link rel="stylesheet" href="./assets/css/intimo.css">
+  <link rel="stylesheet" href="./assets/css/custom.css">
+  <style id="critical-inline-styles">
+    ${customCss}
     .product-detail-layout {
       max-width: 1200px;
       margin: 30px auto;
@@ -1068,10 +1074,10 @@ function buildProductPage() {
 </html>`;
 
   fs.writeFileSync(path.join(__dirname, '..', 'public', 'product.html'), html, 'utf8');
-  console.log('Built public/product.html');
+  console.log('Built public/product.html with embedded critical styles!');
 }
 
 buildIndexPage();
 buildCatalogPage();
 buildProductPage();
-console.log('All pages rebuilt with full-width hero slider!');
+console.log('All pages successfully regenerated with embedded critical CSS and SVG dimension safety!');

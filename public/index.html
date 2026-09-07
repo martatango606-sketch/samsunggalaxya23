@@ -4,10 +4,1281 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Женское белье 2026: купить нижнее белье Киев, Украина в INTIMO</title>
-  <link rel="stylesheet" href="/assets/css/intimo.css">
-  <link rel="stylesheet" href="/assets/css/custom.css">
   <link rel="icon" sizes="192x192" href="https://im1.intimo.com.ua/assets/i/app-icon-192x192.png">
   <link rel="shortcut icon" href="https://im1.intimo.com.ua/assets/i/favicon.png?v=4">
+  <link rel="stylesheet" href="./assets/css/intimo.css">
+  <link rel="stylesheet" href="./assets/css/custom.css">
+  <style id="critical-inline-styles">
+    /* Custom Styles and Interactive Overlays for Intimo Clone */
+:root {
+  --color-primary: #be2c4b;
+  --color-primary-hover: #dd3055;
+  --color-dark: #3b243a;
+  --color-plum: #482845;
+  --color-bg: #fcf7f7;
+  --color-border: #ead7d7;
+  --color-text: #333333;
+  --color-text-muted: #777777;
+  --font-main: 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Top Bar - Matches Intimo Plum Style */
+.top-bar {
+  background: var(--color-plum);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 6px 0;
+}
+
+.top-bar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.top-bar__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-bar__links a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.top-bar__links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.top-bar__right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.top-bar__right a, .top-bar__right span {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.top-bar__right a:hover {
+  color: #ffffff;
+}
+
+/* Site Header */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(59, 36, 58, 0.04);
+}
+
+.header-main {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Gender / Category Tabs */
+.header-gender-tabs {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gender-tab {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #3b243a;
+  position: relative;
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+
+.gender-tab.active {
+  color: var(--color-primary);
+}
+
+.gender-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+.gender-tab:hover {
+  color: var(--color-primary);
+}
+
+/* Centered Logo */
+.header-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-logo img {
+  height: 40px;
+  display: block;
+}
+
+/* Right Header Container */
+.header-right-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Search Box */
+.search-box {
+  width: 280px;
+  position: relative;
+}
+
+@media (min-width: 1200px) {
+  .search-box {
+    width: 320px;
+  }
+}
+
+.search-box__input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 65px 9px 38px;
+  border: 1px solid #d9cbce;
+  border-radius: 20px;
+  font-size: 13px;
+  outline: none;
+  background: #faf8f8;
+  transition: all 0.2s;
+}
+
+.search-box__input:focus {
+  border-color: var(--color-primary);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(190, 44, 75, 0.1);
+}
+
+.search-box__ai-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b243a;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box__extra-icons {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #887886;
+}
+
+.search-box__extra-icons svg {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Search Dropdown */
+.search-results-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  z-index: 1010;
+  max-height: 400px;
+  overflow-y: auto;
+  display: none;
+}
+
+.search-results-dropdown.is-open {
+  display: block;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #f4eeee;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+
+.search-result-item:hover {
+  background: #fdf6f7;
+}
+
+.search-result-item img {
+  width: 44px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.search-result-item__info {
+  flex: 1;
+}
+
+.search-result-item__title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 2px;
+}
+
+.search-result-item__price {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Header Icons (Heart & Cart) */
+.header-icon-btn {
+  background: none;
+  border: none;
+  color: var(--color-dark);
+  position: relative;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon-btn:hover {
+  color: var(--color-primary);
+}
+
+.header-icon-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  fill: none;
+}
+
+.badge-count {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
+/* Sub-Navigation Categories Bar */
+.subnav-bar {
+  background: #ffffff;
+  border-top: 1px solid #f0e6e8;
+  border-bottom: 1px solid #ead7d7;
+}
+
+.subnav-bar__inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.subnav-link {
+  display: inline-block;
+  padding: 9px 8px;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #3b243a;
+  transition: color 0.2s;
+}
+
+.subnav-link:hover, .subnav-link.active {
+  color: var(--color-primary);
+}
+
+.subnav-link.sale {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   FULL-WIDTH HERO SLIDER (Edge-to-Edge 100% width like Screenshot 2)
+   ========================================================================== */
+.hero-fullwidth-slider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #f4ecee;
+  line-height: 0;
+}
+
+.hero-slider-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-slide {
+  min-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slide__image {
+  width: 100%;
+  height: auto;
+  min-height: 340px;
+  max-height: 560px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 1440px) {
+  .hero-slide__image {
+    max-height: 620px;
+  }
+}
+
+/* Bottom-left Discount Badge (-10%) */
+.hero-slider__badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-plum);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 5;
+  text-decoration: none;
+  font-style: italic;
+}
+
+/* Bottom-right Slider Dots */
+.hero-slider__dots {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  z-index: 5;
+}
+
+.hero-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s;
+}
+
+.hero-dot.active {
+  background: var(--color-primary);
+  transform: scale(1.2);
+}
+
+/* Slider Arrows */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+  color: #3b243a;
+}
+
+.hero-fullwidth-slider:hover .hero-arrow {
+  opacity: 1;
+}
+
+.hero-arrow:hover {
+  background: #ffffff;
+}
+
+.hero-arrow_prev {
+  left: 15px;
+}
+
+.hero-arrow_next {
+  right: 15px;
+}
+
+/* ==========================================================================
+   CATEGORY & PRODUCT SECTIONS
+   ========================================================================== */
+.categories-slider {
+  max-width: 1360px;
+  margin: 35px auto 25px;
+  padding: 0 16px;
+}
+
+.categories-slider__title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 18px;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.cat-circle-card {
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-dark);
+  background: #ffffff;
+  padding: 14px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.cat-circle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(190, 44, 75, 0.1);
+  border-color: var(--color-primary);
+}
+
+.cat-circle-card__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 10px;
+  display: block;
+  border: 2px solid #f6e8ec;
+}
+
+.cat-circle-card__name {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Products Section */
+.products-section {
+  max-width: 1360px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  border-bottom: 2px solid #f3e5e8;
+  padding-bottom: 8px;
+}
+
+.section-tabs {
+  display: flex;
+  gap: 20px;
+}
+
+.section-tab-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #887886;
+  cursor: pointer;
+  padding: 4px 0;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.section-tab-btn.active {
+  color: var(--color-dark);
+}
+
+.section-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+.section-view-all {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+/* Product Card */
+.product-card {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(59, 36, 58, 0.08);
+}
+
+.product-card__image-wrap {
+  position: relative;
+  padding-top: 133%;
+  background: #f7f3f3;
+  overflow: hidden;
+}
+
+.product-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+.product-card__image_hover {
+  opacity: 0;
+}
+
+.product-card:hover .product-card__image_hover {
+  opacity: 1;
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.product-card__favorite {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  border: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.product-card__favorite:hover {
+  background: #fff;
+  transform: scale(1.1);
+}
+
+.product-card__favorite.is-active svg {
+  fill: var(--color-primary);
+  stroke: var(--color-primary);
+}
+
+.product-card__favorite svg {
+  width: 18px;
+  height: 18px;
+  stroke: #666;
+  fill: none;
+  stroke-width: 2;
+}
+
+.product-card__body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-card__brand {
+  font-size: 12px;
+  color: #887886;
+  font-weight: 600;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.product-card__title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-dark);
+  line-height: 1.35;
+  margin-bottom: 8px;
+  text-decoration: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 38px;
+}
+
+.product-card__title:hover {
+  color: var(--color-primary);
+}
+
+.product-card__info {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.product-card__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: auto;
+  margin-bottom: 12px;
+}
+
+.product-card__price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.product-card__old-price {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.product-card__sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.size-pill {
+  font-size: 11px;
+  padding: 2px 6px;
+  border: 1px solid #e0d0d4;
+  border-radius: 3px;
+  color: #555;
+}
+
+.product-card__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btn-buy {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: center;
+}
+
+.btn-buy:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn-quick-buy {
+  background: #fff;
+  color: var(--color-dark);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-quick-buy:hover {
+  border-color: var(--color-dark);
+  background: #fafafa;
+}
+
+/* Benefits Banner */
+.benefits-section {
+  max-width: 1360px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.benefit-item__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fcf1f4;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefit-item__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 2px;
+}
+
+.benefit-item__desc {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Footer */
+.site-footer {
+  background: #2a1928;
+  color: #fff;
+  padding: 50px 0 20px;
+  margin-top: 60px;
+}
+
+.footer__inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+.footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__links li {
+  margin-bottom: 10px;
+}
+
+.footer__links a {
+  color: #cbbcc8;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer__links a:hover {
+  color: #ffffff;
+}
+
+.footer__contacts p {
+  color: #cbbcc8;
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.footer__contacts strong {
+  color: #ffffff;
+}
+
+.footer__newsletter-form {
+  display: flex;
+  margin-top: 14px;
+}
+
+.footer__newsletter-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  font-size: 14px;
+}
+
+.footer__newsletter-btn {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 0 4px 4px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #9d8d9b;
+}
+
+/* Cart Drawer */
+.cart-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cart-drawer-overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -480px;
+  width: 440px;
+  max-width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 2001;
+  box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cart-drawer.is-active {
+  right: 0;
+}
+
+.cart-drawer__header {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-drawer__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.cart-drawer__close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.cart-drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px 20px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f2e6e8;
+  align-items: center;
+}
+
+.cart-item img {
+  width: 60px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.cart-item__info {
+  flex: 1;
+}
+
+.cart-item__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 4px;
+}
+
+.cart-item__size {
+  font-size: 12px;
+  color: #888;
+}
+
+.cart-item__price {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 4px;
+}
+
+.cart-item__qty {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cart-item__qty button {
+  background: #f7f7f7;
+  border: none;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cart-item__qty span {
+  width: 28px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cart-item__remove {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.cart-item__remove:hover {
+  color: var(--color-primary);
+}
+
+.cart-drawer__footer {
+  padding: 20px;
+  border-top: 1px solid var(--color-border);
+  background: #fcf9fa;
+}
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 15px;
+}
+
+.cart-checkout-btn {
+  display: block;
+  width: 100%;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.cart-checkout-btn:hover {
+  background: var(--color-primary-hover);
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2100;
+  padding: 15px;
+}
+
+.modal-overlay.is-active {
+  display: flex;
+}
+
+.modal-dialog {
+  background: #fff;
+  width: 100%;
+  max-width: 460px;
+  border-radius: 12px;
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #999;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.modal-desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 6px;
+}
+
+.form-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--color-primary);
+}
+
+.btn-submit {
+  width: 100%;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-submit:hover {
+  background: var(--color-primary-hover);
+}
+
+/* Toast */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  background: var(--color-dark);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+  </style>
 </head>
 <body>
   
@@ -41,7 +1312,7 @@
 
       <!-- Center Script Logo -->
       <a href="/" class="header-logo">
-        <img src="https://im1.intimo.com.ua/assets/i/intimo-logo.svg" alt="INTIMO" onerror="this.src='https://im5.intimo.com.ua/assets/i/intimo-logo.png'">
+        <img src="https://im1.intimo.com.ua/assets/i/intimo-logo.svg" alt="INTIMO" onerror="this.src='https://im5.intimo.com.ua/assets/i/intimo-logo.png'" style="height:40px; display:block;">
       </a>
 
       <!-- Right Group (Search + Wishlist + Cart) -->
@@ -51,12 +1322,12 @@
           <input type="text" id="headerSearch" class="search-box__input" placeholder="Пишите, что желаете...">
           <div class="search-box__extra-icons">
             <!-- Camera / Photo Search -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" title="Поиск по фото">
+            <svg width="18" height="18" style="width:18px;height:18px;min-width:18px;max-width:18px;display:inline-block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" title="Поиск по фото">
               <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
               <circle cx="12" cy="13" r="4"/>
             </svg>
             <!-- Microphone / Voice Search -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" title="Голосовой поиск">
+            <svg width="18" height="18" style="width:18px;height:18px;min-width:18px;max-width:18px;display:inline-block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" title="Голосовой поиск">
               <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
               <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
               <line x1="12" y1="19" x2="12" y2="23"/>
@@ -67,8 +1338,8 @@
         </div>
 
         <!-- Wishlist -->
-        <a href="/catalog" class="header-icon-btn" title="Избранное">
-          <svg viewBox="0 0 24 24">
+        <a href="/catalog" class="header-icon-btn" title="Избранное" style="text-decoration:none;">
+          <svg width="24" height="24" style="width:24px;height:24px;min-width:24px;max-width:24px;display:inline-block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
           </svg>
           <div id="favBadge" class="badge-count" style="display:none;">0</div>
@@ -76,7 +1347,7 @@
 
         <!-- Cart -->
         <button class="header-icon-btn" onclick="App.openCart()" title="Корзина">
-          <svg viewBox="0 0 24 24">
+          <svg width="24" height="24" style="width:24px;height:24px;min-width:24px;max-width:24px;display:inline-block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
             <line x1="3" y1="6" x2="21" y2="6"/>
             <path d="M16 10a4 4 0 01-8 0"/>
@@ -206,7 +1477,7 @@
     <div class="product-card__image-wrap">
       
       <button class="product-card__favorite" data-id="95760" onclick="App.toggleFavorite('95760', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/95760/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_47/95760/95760-11.jpg" alt="Мягкий бюстгальтер без косточек" loading="lazy">
@@ -235,7 +1506,7 @@
     <div class="product-card__image-wrap">
       
       <button class="product-card__favorite" data-id="148692" onclick="App.toggleFavorite('148692', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/148692/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_74/148692/148692-11.jpg" alt="Раздельный купальник с уплотненной чашкой" loading="lazy">
@@ -264,7 +1535,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">плавки на выбор</div>
       <button class="product-card__favorite" data-id="113762" onclick="App.toggleFavorite('113762', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/113762/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_56/113762/113762-10.jpg" alt="Верх купальника с уплотненной чашкой" loading="lazy">
@@ -293,7 +1564,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">Акция! 2 шт за 1999 грн</div>
       <button class="product-card__favorite" data-id="61320" onclick="App.toggleFavorite('61320', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/61320/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_30/61320/61320-11.jpg" alt="Бюстгальтер с плотной чашкой" loading="lazy">
@@ -322,7 +1593,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">- 20%</div>
       <button class="product-card__favorite" data-id="57674" onclick="App.toggleFavorite('57674', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/57674/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_28/57674/57674-11.jpg" alt="Кружевной бюстгальтер на широких бретелях" loading="lazy">
@@ -351,7 +1622,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">- 20%</div>
       <button class="product-card__favorite" data-id="56663" onclick="App.toggleFavorite('56663', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/56663/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_28/56663/56663-11.jpg" alt="Кружевной бюстгальтер на широких бретелях" loading="lazy">
@@ -380,7 +1651,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">- 38%</div>
       <button class="product-card__favorite" data-id="115838" onclick="App.toggleFavorite('115838', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/115838/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_57/115838/115838-10.jpg" alt="Купальник с мягкой чашкой, плавки слип" loading="lazy">
@@ -409,7 +1680,7 @@
     <div class="product-card__image-wrap">
       
       <button class="product-card__favorite" data-id="96061" onclick="App.toggleFavorite('96061', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/96061/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_48/96061/96061-11.jpg" alt="Бюстгальтер с мягкой чашкой" loading="lazy">
@@ -441,7 +1712,7 @@
     <div class="product-card__image-wrap">
       
       <button class="product-card__favorite" data-id="59363" onclick="App.toggleFavorite('59363', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/59363/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_29/59363/59363-10.jpg" alt="Кружевной бюстгальтер на широких бретелях" loading="lazy">
@@ -470,7 +1741,7 @@
     <div class="product-card__image-wrap">
       
       <button class="product-card__favorite" data-id="39753" onclick="App.toggleFavorite('39753', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/39753/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_19/39753/39753-11.jpg" alt="Бюстгальтер балконет на широких бретелях" loading="lazy">
@@ -499,7 +1770,7 @@
     <div class="product-card__image-wrap">
       
       <button class="product-card__favorite" data-id="96829" onclick="App.toggleFavorite('96829', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/96829/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_48/96829/96829-11.jpg" alt="Бюстгальтер без бретелек" loading="lazy">
@@ -528,7 +1799,7 @@
     <div class="product-card__image-wrap">
       
       <button class="product-card__favorite" data-id="59362" onclick="App.toggleFavorite('59362', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/59362/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_29/59362/59362-10.jpg" alt="Кружевной бюстгальтер на широких бретелях" loading="lazy">
@@ -557,7 +1828,7 @@
     <div class="product-card__image-wrap">
       
       <button class="product-card__favorite" data-id="35933" onclick="App.toggleFavorite('35933', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/35933/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_17/35933/35933-11.jpg" alt="Бюстгальтер с плотной чашкой" loading="lazy">
@@ -586,7 +1857,7 @@
     <div class="product-card__image-wrap">
       
       <button class="product-card__favorite" data-id="81455" onclick="App.toggleFavorite('81455', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/81455/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_40/81455/81455-10.jpg" alt="Кружевной минимайзер" loading="lazy">
@@ -615,7 +1886,7 @@
     <div class="product-card__image-wrap">
       
       <button class="product-card__favorite" data-id="94464" onclick="App.toggleFavorite('94464', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/94464/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_47/94464/94464-11.jpg" alt="Бюстгальтер с плотной чашкой" loading="lazy">
@@ -644,7 +1915,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">- 50%</div>
       <button class="product-card__favorite" data-id="142563" onclick="App.toggleFavorite('142563', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/142563/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_71/142563/142563-11.jpg" alt="Трусики слип, 3 штуки" loading="lazy">
@@ -676,7 +1947,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">плавки на выбор</div>
       <button class="product-card__favorite" data-id="113762" onclick="App.toggleFavorite('113762', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/113762/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_56/113762/113762-10.jpg" alt="Верх купальника с уплотненной чашкой" loading="lazy">
@@ -705,7 +1976,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">Акция! 2 шт за 1999 грн</div>
       <button class="product-card__favorite" data-id="61320" onclick="App.toggleFavorite('61320', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/61320/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_30/61320/61320-11.jpg" alt="Бюстгальтер с плотной чашкой" loading="lazy">
@@ -734,7 +2005,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">- 20%</div>
       <button class="product-card__favorite" data-id="57674" onclick="App.toggleFavorite('57674', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/57674/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_28/57674/57674-11.jpg" alt="Кружевной бюстгальтер на широких бретелях" loading="lazy">
@@ -763,7 +2034,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">- 20%</div>
       <button class="product-card__favorite" data-id="56663" onclick="App.toggleFavorite('56663', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/56663/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_28/56663/56663-11.jpg" alt="Кружевной бюстгальтер на широких бретелях" loading="lazy">
@@ -792,7 +2063,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">- 38%</div>
       <button class="product-card__favorite" data-id="115838" onclick="App.toggleFavorite('115838', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/115838/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_57/115838/115838-10.jpg" alt="Купальник с мягкой чашкой, плавки слип" loading="lazy">
@@ -821,7 +2092,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">- 50%</div>
       <button class="product-card__favorite" data-id="142563" onclick="App.toggleFavorite('142563', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/142563/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_71/142563/142563-11.jpg" alt="Трусики слип, 3 штуки" loading="lazy">
@@ -850,7 +2121,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">- 30%</div>
       <button class="product-card__favorite" data-id="118021" onclick="App.toggleFavorite('118021', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/118021/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_59/118021/118021-10.jpg" alt="Легкая пижама для женщин" loading="lazy">
@@ -879,7 +2150,7 @@
     <div class="product-card__image-wrap">
       <div class="product-card__badge">- 30%</div>
       <button class="product-card__favorite" data-id="110278" onclick="App.toggleFavorite('110278', this)" title="В избранное">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <svg width="18" height="18" style="width:18px;height:18px;display:inline-block;" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
       </button>
       <a href="/goods/110278/">
         <img class="product-card__image" src="https://im1.intimo.com.ua/images/goods/_55/110278/110278-11.jpg" alt="Пижама: джемпер и брюки" loading="lazy">
@@ -1101,7 +2372,7 @@
     </div>
   </div>
 
-  <script src="/assets/js/main.js"></script>
+  <script src="./assets/js/main.js"></script>
   <script>
     async function handleQuickBuySubmit(e) {
       e.preventDefault();
