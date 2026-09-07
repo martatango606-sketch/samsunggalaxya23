@@ -28,9 +28,14 @@ try {
   console.error('Warning: could not load categories.json', e.message);
 }
 
-// Static assets
+// Static assets (no-cache for instant live updates)
 app.use(express.static(path.join(__dirname, 'public'), {
-  maxAge: '1d'
+  maxAge: 0,
+  setHeaders: (res) => {
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+  }
 }));
 
 // API Routes
