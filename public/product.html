@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Купить нижнее белье в INTIMO</title>
+  <link rel="stylesheet" href="/assets/css/intimo.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="icon" sizes="192x192" href="https://im1.intimo.com.ua/assets/i/app-icon-192x192.png">
+  <link rel="shortcut icon" href="https://im1.intimo.com.ua/assets/i/favicon.png?v=4">
+  <style>
+    .product-detail-layout {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 15px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    @media (max-width: 768px) {
+      .product-detail-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .gallery-main {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      background: #fff;
+    }
+    .gallery-main img {
+      width: 100%;
+      height: 580px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-thumbs {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      overflow-x: auto;
+    }
+    .gallery-thumb {
+      width: 80px;
+      height: 100px;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .gallery-thumb.active {
+      border-color: var(--color-primary);
+    }
+    .gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .product-info-panel {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 30px;
+    }
+    .product-brand-tag {
+      font-size: 14px;
+      color: var(--color-primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .product-h1 {
+      font-size: 26px;
+      color: var(--color-dark);
+      font-weight: 700;
+      margin: 0 0 14px;
+      line-height: 1.3;
+    }
+    .price-box {
+      display: flex;
+      align-items: baseline;
+      gap: 15px;
+      margin: 20px 0;
+      padding: 15px 0;
+      border-top: 1px solid #f2e5e8;
+      border-bottom: 1px solid #f2e5e8;
+    }
+    .price-main {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+    .price-old {
+      font-size: 18px;
+      color: #999;
+      text-decoration: line-through;
+    }
+    .size-selector {
+      margin: 20px 0;
+    }
+    .size-selector label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--color-dark);
+    }
+    .size-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .size-btn {
+      padding: 8px 16px;
+      border: 1px solid var(--color-border);
+      background: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .size-btn.active {
+      border-color: var(--color-primary);
+      background: var(--color-primary);
+      color: #fff;
+    }
+    .product-actions-box {
+      display: flex;
+      gap: 14px;
+      margin-top: 25px;
+    }
+    .product-actions-box .btn-buy {
+      flex: 2;
+      padding: 14px;
+      font-size: 16px;
+    }
+    .product-actions-box .btn-quick-buy {
+      flex: 1;
+      padding: 14px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar__inner">
+      <div class="top-bar__phones">
+        <span>Киев: <strong>(044) 364-55-45</strong></span>
+        <span>Бесплатно по Украине: <strong>0 800 200 745</strong></span>
+        <span>Lifecell: <strong>(093) 309-91-88</strong></span>
+        <span>Kyivstar: <strong>(067) 232-73-15</strong></span>
+        <button class="top-bar__callback-btn" onclick="App.openCallback()">Перезвоните мне</button>
+      </div>
+      <div class="top-bar__meta">
+        <span>Шоурум: г. Киев, ул. Князей Острожских, 46/2</span>
+        <div class="lang-switch">
+          <a href="/" class="active">RU</a> | <a href="/">UA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="site-header">
+    <div class="header-main">
+      <a href="/" class="header-logo">
+        <img src="https://im1.intimo.com.ua/assets/i/intimo-logo.svg" alt="INTIMO.com.ua" onerror="this.src='https://im5.intimo.com.ua/assets/i/intimo-logo.png'">
+      </a>
+
+      <a href="/catalog" class="catalog-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        Каталог
+      </a>
+
+      <div class="search-box">
+        <input type="text" id="headerSearch" class="search-box__input" placeholder="Поиск среди более 10 000 моделей белья...">
+        <div class="search-box__icon">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </div>
+        <div id="searchDropdown" class="search-results-dropdown"></div>
+      </div>
+
+      <div class="header-actions">
+        <a href="/catalog" class="header-action-item">
+          <svg viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+          </svg>
+          <span>Избранное</span>
+          <div id="favBadge" class="badge-count" style="display:none;">0</div>
+        </a>
+
+        <div class="header-action-item" onclick="App.openCart()">
+          <svg viewBox="0 0 24 24">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span>Корзина</span>
+          <div id="cartBadge" class="badge-count" style="display:none;">0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <div class="nav-bar__inner">
+        <a href="/catalog?cat=zhenskoe-bele" class="nav-link ">Женщинам</a>
+        <a href="/catalog?cat=byustgaltery" class="nav-link">Бюстгальтеры</a>
+        <a href="/catalog?cat=trusiki" class="nav-link">Трусики</a>
+        <a href="/catalog?cat=kupalniki" class="nav-link">Купальники</a>
+        <a href="/catalog?cat=bodi" class="nav-link">Боди</a>
+        <a href="/catalog?cat=domashnyaya-odezhda" class="nav-link">Домашняя одежда</a>
+        <a href="/catalog?cat=muzhskoe" class="nav-link">Мужчинам</a>
+        <a href="/catalog?sale=1" class="nav-link sale">SALE до -60%</a>
+        <a href="/catalog" class="nav-link">Бренды</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Promo alert strip -->
+  <div class="promo-top-strip">
+    <span>🔥 Весенняя распродажа белья и купальников со скидками до -60%! Бесплатная доставка от 1500 ₴</span>
+    <a href="/catalog?sale=1">Смотреть скидки →</a>
+  </div>
+  
+
+  <div class="product-detail-layout">
+    <!-- Gallery -->
+    <div>
+      <div class="gallery-main">
+        <img id="mainImage" src="https://im1.intimo.com.ua/images/goods/_47/95760/95760-11.jpg" alt="Мягкий бюстгальтер без косточек">
+      </div>
+      <div id="thumbsList" class="gallery-thumbs"></div>
+    </div>
+
+    <!-- Info Panel -->
+    <div class="product-info-panel">
+      <div id="productBrand" class="product-brand-tag">Nana</div>
+      <h1 id="productTitle" class="product-h1">Мягкий бюстгальтер без косточек</h1>
+      <div id="productCategory" style="font-size: 14px; color: #888; margin-bottom: 10px;">Бюстгальтеры • Мягкая чашка</div>
+
+      <div class="price-box">
+        <div id="productPrice" class="price-main">1 082 ₴</div>
+        <div id="productOldPrice" class="price-old" style="display:none;">0 ₴</div>
+        <div id="productDiscount" class="product-card__badge" style="position:static; display:none;"></div>
+      </div>
+
+      <div class="size-selector">
+        <label>Выберите размер:</label>
+        <div id="sizesList" class="size-options"></div>
+      </div>
+
+      <div class="product-actions-box">
+        <button id="buyBtn" class="btn-buy" onclick="addToCartCurrent()">В корзину</button>
+        <button class="btn-quick-buy" onclick="quickBuyCurrent()">Купить в 1 клик</button>
+      </div>
+
+      <div style="margin-top: 30px; border-top: 1px solid #f2e5e8; padding-top: 20px;">
+        <h4 style="margin: 0 0 10px; color: var(--color-dark);">Условия покупки</h4>
+        <ul style="padding-left: 20px; font-size: 13px; color: #666; line-height: 1.8;">
+          <li>Бесплатная доставка при заказе от 1500 ₴</li>
+          <li>Примерка перед покупкой (Киев)</li>
+          <li>Оплата при получении или онлайн картой</li>
+          <li>100% гарантия подлинности бренда</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Benefits -->
+  <section class="benefits-section">
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-item__icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="1" y="3" width="15" height="13"/>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="benefit-item__title">Бесплатная доставка</div>
+          <div class="benefit-item__desc">По Киеву и Украине от 1500 ₴</div>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-item__icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="benefit-item__title">100% Оригинал</div>
+          <div class="benefit-item__desc">Только сертифицированные бренды</div>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-item__icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 14 14"/>
+          </svg>
+        </div>
+        <div>
+          <div class="benefit-item__title">Примерка перед покупкой</div>
+          <div class="benefit-item__desc">Курьер подождет 15 минут</div>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-item__icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="benefit-item__title">Обмен и возврат</div>
+          <div class="benefit-item__desc">Легкий возврат в течение 14 дней</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__title">Интернет-магазин INTIMO</div>
+          <p style="color: #cbbcc8; font-size: 14px; line-height: 1.6;">
+            Крупнейший в Украине интернет-магазин брендового нижнего белья, купальников и домашней одежды. Работаем с 2002 года. Более 50 000 довольных клиентов.
+          </p>
+          <div style="margin-top: 15px; font-size: 13px; color: #a996a6;">
+            г. Киев, ул. Князей Острожских, 46/2<br>
+            Пн–Пт: 10:00–20:00, Сб–Вс: 10:00–17:00
+          </div>
+        </div>
+
+        <div>
+          <div class="footer__title">Покупателям</div>
+          <ul class="footer__links">
+            <li><a href="/catalog">Каталог товаров</a></li>
+            <li><a href="/catalog?sale=1">Скидки и акции</a></li>
+            <li><a href="#">Доставка и оплата</a></li>
+            <li><a href="#">Примерка белья</a></li>
+            <li><a href="#">Таблица размеров</a></li>
+            <li><a href="#">Возврат и обмен</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__title">О компании</div>
+          <ul class="footer__links">
+            <li><a href="#">О магазине INTIMO</a></li>
+            <li><a href="#">Шоурум в Киеве</a></li>
+            <li><a href="#">Отзывы покупателей</a></li>
+            <li><a href="#">Блог о стиле и белье</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__title">Контакты и подписка</div>
+          <div class="footer__contacts">
+            <p>Бесплатно по Украине: <strong>0 800 200 745</strong></p>
+            <p>Viber / Telegram: <strong>(093) 309-91-88</strong></p>
+            <p>Email: <strong>info@intimo.com.ua</strong></p>
+          </div>
+          <div style="margin-top: 15px;">
+            <div style="font-size: 13px; margin-bottom: 6px; color: #cbbcc8;">Получайте промокоды и закрытые распродажи:</div>
+            <form class="footer__newsletter-form" onsubmit="event.preventDefault(); App.showToast('Спасибо за подписку! Промокод отправлен.');">
+              <input type="email" required placeholder="Ваш email..." class="footer__newsletter-input">
+              <button type="submit" class="footer__newsletter-btn">ОК</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div>© 2002–2026 INTIMO. Все права защищены. Клон для Railway.</div>
+        <div>
+          <span style="margin-right: 15px;">Visa / Mastercard / Apple Pay / Google Pay</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div id="cartOverlay" class="cart-drawer-overlay" onclick="App.closeCart()"></div>
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-drawer__header">
+      <div class="cart-drawer__title">Корзина покупок</div>
+      <button class="cart-drawer__close" onclick="App.closeCart()">✕</button>
+    </div>
+    <div id="cartDrawerBody" class="cart-drawer__body"></div>
+    <div class="cart-drawer__footer">
+      <div class="cart-total-row">
+        <span>Итого к оплате:</span>
+        <span id="cartDrawerTotal">0 ₴</span>
+      </div>
+      <button id="cartCheckoutBtn" class="cart-checkout-btn">Оформить заказ</button>
+    </div>
+  </div>
+
+  <!-- Quick Buy Modal -->
+  <div id="quickBuyModal" class="modal-overlay">
+    <div class="modal-dialog">
+      <button class="modal-close" onclick="App.closeQuickBuy()">✕</button>
+      <h3 id="quickBuyTitle" class="modal-title">Быстрый заказ</h3>
+      <p class="modal-desc">Оставьте ваш номер телефона, и наш консультант согласует доставку и размер.</p>
+      <div style="margin-bottom: 16px; font-size: 15px; color: #be2c4b; font-weight: 700;" id="quickBuyPrice"></div>
+      <form onsubmit="handleQuickBuySubmit(event)">
+        <div class="form-group">
+          <label>Ваше имя</label>
+          <input type="text" id="quickBuyName" required placeholder="Мария" class="form-input">
+        </div>
+        <div class="form-group">
+          <label>Номер телефона</label>
+          <input type="tel" id="quickBuyPhone" required placeholder="+38 (0__) ___-__-__" class="form-input">
+        </div>
+        <div class="form-group">
+          <label>Город / Адрес доставки</label>
+          <input type="text" id="quickBuyAddress" placeholder="г. Киев, Новая Почта №12" class="form-input">
+        </div>
+        <button type="submit" class="btn-submit">Подтвердить заказ</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Callback Modal -->
+  <div id="callbackModal" class="modal-overlay">
+    <div class="modal-dialog">
+      <button class="modal-close" onclick="App.closeCallback()">✕</button>
+      <h3 class="modal-title">Заказать обратный звонок</h3>
+      <p class="modal-desc">Мы перезвоним вам в течение 10 минут в рабочее время.</p>
+      <form onsubmit="handleCallbackSubmit(event)">
+        <div class="form-group">
+          <label>Ваше имя</label>
+          <input type="text" required placeholder="Имя" class="form-input">
+        </div>
+        <div class="form-group">
+          <label>Телефон</label>
+          <input type="tel" required placeholder="+38 (0__) ___-__-__" class="form-input">
+        </div>
+        <button type="submit" class="btn-submit">Жду звонка</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    async function handleQuickBuySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('quickBuyName').value;
+      const phone = document.getElementById('quickBuyPhone').value;
+      const address = document.getElementById('quickBuyAddress').value;
+
+      try {
+        const res = await fetch('/api/order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, phone, address, items: App.cart, total: 0 })
+        });
+        const data = await res.json();
+        App.closeQuickBuy();
+        App.cart = [];
+        App.saveCart();
+        alert(data.message || 'Заказ успешно принят!');
+      } catch (err) {
+        alert('Заказ принят! Спасибо за покупку.');
+        App.closeQuickBuy();
+      }
+    }
+
+    function handleCallbackSubmit(e) {
+      e.preventDefault();
+      App.closeCallback();
+      App.showToast('Заявка на звонок принята! Скоро наберем.');
+    }
+  </script>
+  
+
+  <script>
+    let currentProduct = null;
+    let selectedSize = '';
+
+    async function loadProduct() {
+      // Get ID from pathname /goods/101288/
+      const match = window.location.pathname.match(/\/goods\/(\d+)/);
+      const id = match ? match[1] : '95760';
+
+      try {
+        const res = await fetch('/api/products/' + id);
+        if (!res.ok) throw new Error('Not found');
+        currentProduct = await res.json();
+      } catch (e) {
+        currentProduct = {"id":"95760","title":"Мягкий бюстгальтер без косточек","brand":"Nana","category":"Бюстгальтеры","variant":"Мягкая чашка","info":"Размеры: 75-120 Чашка B-K","price":1082,"oldPrice":0,"discount":"","image":"https://im1.intimo.com.ua/images/goods/_47/95760/95760-11.jpg","hoverImage":"https://im1.intimo.com.ua/images/goods_images/_47/95760/253994-11.jpg","gallery":["https://im1.intimo.com.ua/images/goods/_47/95760/95760-11.jpg","https://im1.intimo.com.ua/images/goods_images/_47/95760/253994-11.jpg","https://im1.intimo.com.ua/images/goods_images/_47/95760/254000-11.jpg","https://im1.intimo.com.ua/images/goods_images/_47/95760/254001-11.jpg","https://im1.intimo.com.ua/images/goods_images/_47/95760/254003-11.jpg","https://im1.intimo.com.ua/images/goods_images/_47/95760/254005-11.jpg"],"link":"/goods/95760/","sizes":["70B","75B","75C","80B","80C","85B"],"inStock":true,"rating":5,"reviewsCount":12};
+      }
+
+      renderCurrent();
+    }
+
+    function renderCurrent() {
+      document.title = currentProduct.title + ' | INTIMO';
+      document.getElementById('productBrand').textContent = currentProduct.brand;
+      document.getElementById('productTitle').textContent = currentProduct.title;
+      document.getElementById('productPrice').textContent = currentProduct.price.toLocaleString() + ' ₴';
+
+      if (currentProduct.oldPrice) {
+        document.getElementById('productOldPrice').textContent = currentProduct.oldPrice.toLocaleString() + ' ₴';
+        document.getElementById('productOldPrice').style.display = 'block';
+      }
+      if (currentProduct.discount) {
+        document.getElementById('productDiscount').textContent = currentProduct.discount;
+        document.getElementById('productDiscount').style.display = 'inline-block';
+      }
+
+      document.getElementById('mainImage').src = currentProduct.image;
+
+      // Gallery thumbs
+      const gallery = currentProduct.gallery && currentProduct.gallery.length > 0
+        ? currentProduct.gallery
+        : [currentProduct.image, currentProduct.hoverImage].filter(Boolean);
+
+      const thumbsList = document.getElementById('thumbsList');
+      thumbsList.innerHTML = gallery.map((img, i) => `
+        <div class="gallery-thumb ${i === 0 ? 'active' : ''}" onclick="switchImg('${img}', this)">
+          <img src="${img}" alt="">
+        </div>
+      `).join('');
+
+      // Sizes
+      const sizes = currentProduct.sizes || ['70B', '75B', '80B', 'S', 'M', 'L'];
+      selectedSize = sizes[0];
+      const sizesList = document.getElementById('sizesList');
+      sizesList.innerHTML = sizes.map((s, i) => `
+        <button class="size-btn ${i === 0 ? 'active' : ''}" onclick="selectSize('${s}', this)">${s}</button>
+      `).join('');
+    }
+
+    function switchImg(url, thumb) {
+      document.getElementById('mainImage').src = url;
+      document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+
+    function selectSize(size, btn) {
+      selectedSize = size;
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function addToCartCurrent() {
+      if (!currentProduct) return;
+      App.addToCart(currentProduct, selectedSize);
+    }
+
+    function quickBuyCurrent() {
+      if (!currentProduct) return;
+      App.openQuickBuy(currentProduct);
+    }
+
+    document.addEventListener('DOMContentLoaded', loadProduct);
+  </script>
+</body>
+</html>

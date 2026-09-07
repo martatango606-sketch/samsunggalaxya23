@@ -1,0 +1,47 @@
+[
+  {
+    "id": "all",
+    "name": "Все товары",
+    "count": 84
+  },
+  {
+    "id": "zhenskoe-bele",
+    "name": "Женское белье",
+    "count": 41
+  },
+  {
+    "id": "byustgaltery",
+    "name": "Бюстгальтеры",
+    "count": 26
+  },
+  {
+    "id": "trusiki",
+    "name": "Трусики",
+    "count": 17
+  },
+  {
+    "id": "kupalniki",
+    "name": "Купальники",
+    "count": 4
+  },
+  {
+    "id": "bodi",
+    "name": "Боди",
+    "count": 0
+  },
+  {
+    "id": "domashnyaya-odezhda",
+    "name": "Домашняя одежда",
+    "count": 9
+  },
+  {
+    "id": "muzhskoe",
+    "name": "Мужское белье",
+    "count": 2
+  },
+  {
+    "id": "sale",
+    "name": "SALE % Скидки",
+    "count": 41
+  }
+]

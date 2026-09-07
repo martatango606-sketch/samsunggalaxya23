@@ -1,0 +1,28 @@
+{
+  "name": "intimo-clone",
+  "version": "1.0.0",
+  "description": "1:1 clone of intimo.com.ua adapted for Railway hosting",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "parse": "node scripts/parser.js"
+  },
+  "keywords": [
+    "intimo",
+    "ecommerce",
+    "railway",
+    "clone",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "isomorphic-git": "^1.41.9"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
